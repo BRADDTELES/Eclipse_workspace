@@ -1,0 +1,39 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		String nome;
+		double nota1, nota2, nota3;
+		
+		System.out.println("Informe o seu Nome: ");
+		nome = sc.nextLine();
+		System.out.println("Informe a nota do 1º trimestre: ");
+		nota1 = sc.nextDouble();
+		System.out.println("Informe a nota do 2º trimestre: ");
+		nota2 = sc.nextDouble();
+		System.out.println("Informe a nota do 3º trimestre: ");
+		nota3 = sc.nextDouble();
+		double soma = nota1 + nota2 + nota3;
+		
+		if (soma > 60) {
+			System.out.printf("FINAL GRADE = %.2f%n",soma);
+			System.out.println("PASS");
+		}
+		else {
+			System.out.printf("FINAL GRADE = %.2f%n",soma);
+			System.out.println("FAILED");
+			double pontosFaltantes = 60 - soma;
+			System.out.printf("MISSING %.2f%n",pontosFaltantes+" POINTS");
+		}
+		
+		sc.close();
+	}
+
+}

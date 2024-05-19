@@ -1,0 +1,9 @@
+package entities;
+
+public class Student {
+
+	public name;
+	public nota;
+	
+	
+}
